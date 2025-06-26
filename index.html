@@ -3,148 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A static website hosted on GitHub Pages, showcasing an introduction and detailed content.">
-    <meta name="keywords" content="GitHub Pages, static website, portfolio">
-    <title>My Awesome Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .page {
-            display: none;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        #intro-page {
-            display: flex; /* Show intro page by default */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-            text-align: center;
-        }
-        #intro-page h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        #intro-page p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            background: #007bff;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background: #0056b3;
-        }
-        #details-page {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        #details-page h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        #details-page p {
-            margin-bottom: 1rem;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            #intro-page h2 {
-                font-size: 1.5rem;
-            }
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <title>My Styled Website</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Awesome Site</h1>
+        <h1>My Awesome Site</h1>
     </header>
-    <div id="intro-page" class="page">
-        <h2>Explore Our Creative World</h2>
-        <p>This is a static website hosted on GitHub Pages, showcasing our creativity and technical skills.</p>
-        <button class="btn" onclick="showPage('details-page')">Get Started</button>
-    </div>
-    <div id="details-page" class="page">
-        <h2>Detailed Information</h2>
-        <p>This page provides in-depth details about our project. We aim to deliver a high-quality user experience through modern web technologies.</p>
-        <p>Key features include:</p>
-        <ul>
-            <li>Responsive design built with HTML, CSS, and JavaScript</li>
-            <li>Hosted on GitHub Pages for fast and reliable access</li>
-            <li>Integrated ClustrMaps plugin to display visitor distribution</li>
-        </ul>
-        <h3>Visitor Map</h3>
-        <div id="clustrmaps-container"></div>
-    </div>
+    <main>
+        <p>This is a styled static website hosted on GitHub Pages.</p>
+        <p>Explore more at <a href="https://github.com">GitHub</a>.</p>
+    </main>
     <footer>
-        <p>© 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2025 My Website</p>
     </footer>
-    <script>
-        let clustrmapsLoaded = false;
-
-        function loadClustrMaps() {
-            if (!clustrmapsLoaded) {
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.id = 'clustrmaps';
-                script.src = '//clustrmaps.com/map_v2.js?d=GOGHp180BTF9FZQ7M0kGxOZ4fZ3labcHbX5iYBHoWWg&cl=ffffff&w=a';
-                document.getElementById('clustrmaps-container').appendChild(script);
-                clustrmapsLoaded = true;
-            }
-        }
-
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.style.display = 'none';
-            });
-            document.getElementById(pageId).style.display = 'block';
-            if (pageId === 'details-page') {
-                loadClustrMaps();
-            }
-        }
-
-        // Show intro page by default
-        document.getElementById('intro-page').style.display = 'flex';
-    </script>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=GOGHp180BTF9FZQ7M0kGxOZ4fZ3labcHbX5iYBHoWWg&cl=ffffff&w=a"></script>
 </body>
 </html>
