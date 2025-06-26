@@ -114,18 +114,35 @@
             <li>Integrated ClustrMaps plugin to display visitor distribution</li>
         </ul>
         <h3>Visitor Map</h3>
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=GOGHp180BTF9FZQ7M0kGxOZ4fZ3labcHbX5iYBHoWWg&cl=ffffff&w=a"></script>
+        <div id="clustrmaps-container"></div>
     </div>
     <footer>
         <p>© 2025 My Website. All rights reserved.</p>
     </footer>
     <script>
+        let clustrmapsLoaded = false;
+
+        function loadClustrMaps() {
+            if (!clustrmapsLoaded) {
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.id = 'clustrmaps';
+                script.src = '//clustrmaps.com/map_v2.js?d=GOGHp180BTF9FZQ7M0kGxOZ4fZ3labcHbX5iYBHoWWg&cl=ffffff&w=a';
+                document.getElementById('clustrmaps-container').appendChild(script);
+                clustrmapsLoaded = true;
+            }
+        }
+
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
                 page.style.display = 'none';
             });
             document.getElementById(pageId).style.display = 'block';
+            if (pageId === 'details-page') {
+                loadClustrMaps();
+            }
         }
+
         // Show intro page by default
         document.getElementById('intro-page').style.display = 'flex';
     </script>
